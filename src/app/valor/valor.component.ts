@@ -1,3 +1,4 @@
+import { SaldoComponent } from './../saldo/saldo.component';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,6 +11,10 @@ export class ValorComponent implements OnInit, AfterViewInit {
   constructor(){
     this.valor = 0;
   }
+
+  saldo = {
+    value: 0,   
+  };
 
   ngOnInit(): void {}
 
@@ -33,4 +38,9 @@ export class ValorComponent implements OnInit, AfterViewInit {
   onEnterKey(){
     this.onButtonClick();
   }
+
+  onDonationEvent(valor: number){
+    this.saldo.value= valor;
+  }
+
 }

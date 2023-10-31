@@ -1,0 +1,14 @@
+  <div class="row">
+    <div class="container contact">
+      <div class="row">
+       <app-saldo
+         #balance
+         (dblclick)="
+           balance.getBackgroundColor() == 'amber'
+             ? balance.onDblClickBalance('blue')
+             : balance.onDblClickBalance('amber')
+         "
+       ></app-saldo>
+     </div>   
+   </div>
+  </div>
