@@ -12,6 +12,7 @@ import { provideNgxMask } from 'ngx-mask';
 import { SaldoComponent } from './saldo/saldo.component';
 import { BalanceComponent } from './balance/balance.component';
 import { TelaPrincipalComponent } from './tela-principal/tela-principal.component';
+import { CadastroUsuariosComponent } from './cadastro-usuarios/cadastro-usuarios.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TelaPrincipalComponent } from './tela-principal/tela-principal.componen
     ValorComponent,
     SaldoComponent,
     BalanceComponent,
-    TelaPrincipalComponent,    
+    TelaPrincipalComponent,
+    CadastroUsuariosComponent,    
   ],
   imports: [
     BrowserModule,
