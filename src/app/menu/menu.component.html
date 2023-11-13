@@ -9,7 +9,7 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger">
                     <i class="material-icons">menu</i>
                 </a>
-                <ul class="right hide-on-med-and-down">
+                <ul class="right hide-on-med-and-down" [hidden]="!this.loggedIn"> 
                     <li><a href="#" class="flow-text">Cadastrar</a></li>
                     <li><a href="#" class="flow-text">Alterar</a></li>
                     <li><a href="#" class="flow-text">Excluir</a></li>                    

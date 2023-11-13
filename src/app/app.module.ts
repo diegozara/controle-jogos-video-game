@@ -13,6 +13,8 @@ import { SaldoComponent } from './saldo/saldo.component';
 import { BalanceComponent } from './balance/balance.component';
 import { TelaPrincipalComponent } from './tela-principal/tela-principal.component';
 import { CadastroUsuariosComponent } from './cadastro-usuarios/cadastro-usuarios.component';
+import { LoginComponent } from './login/login.component';
+import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,14 +25,16 @@ import { CadastroUsuariosComponent } from './cadastro-usuarios/cadastro-usuarios
     SaldoComponent,
     BalanceComponent,
     TelaPrincipalComponent,
-    CadastroUsuariosComponent,    
+    CadastroUsuariosComponent,
+    LoginComponent,    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     NgxMaskDirective,
-    NgxMaskPipe
+    NgxMaskPipe,
+    HttpClientModule
   ],
   providers: [provideNgxMask(),],
   bootstrap: [AppComponent,]
