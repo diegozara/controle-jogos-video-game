@@ -1,0 +1,28 @@
+<div>
+  <h5>Usuários cadastrados</h5>
+  <!-- Tabela de usuários -->
+  <table class="highlight" *ngIf="usuarios!.length > 0">
+    <thead>
+      <tr>
+        <th>Nome de usuário</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let u of usuarios">
+        <td>{{ u.username | lowercase }}</td>
+        <td class="right"></td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="usuarios!.length == 0">
+    <div class="row">
+      <div class="center-align">
+        <i class="col s12 material-icons large">mood_bad</i>
+        <span class="col s12 flow-text"
+          >Ainda não temos usuários cadastrados!</span        >
+      </div>
+    </div>
+  </div>
+</div>

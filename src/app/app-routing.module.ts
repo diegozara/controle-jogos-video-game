@@ -1,17 +1,17 @@
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ValorComponent } from './valor/valor.component';
 import { TelaPrincipalComponent } from './tela-principal/tela-principal.component';
-import { CadastroUsuariosComponent } from './cadastro-usuarios/cadastro-usuarios.component';
-import { LoginComponent } from './login/login.component';
+import { TelaLoginComponent } from './tela-login/tela-login.component';
+import { TelaCadastroComponent } from './tela-cadastro/tela-cadastro.component';
+import { TelaUsuarioObservableComponent } from './tela-usuario-observable/tela-usuario-observable.component';
+import { TelaUsuarioPromisseComponent } from './tela-usuario-promisse/tela-usuario-promisse.component';
 
-const routes: Routes = [{path: 'principal', component: ValorComponent},
-                        {path: 'telaprincipal', component: TelaPrincipalComponent},
-                        {path: 'principal/:info', component: ValorComponent},
-                        {path: 'cadastrousuario', component: CadastroUsuariosComponent},
-                        {path: '', component: LoginComponent}
-                        
-];
+const routes: Routes = [{path: 'principal', component: TelaPrincipalComponent},
+                        {path: '', component: TelaLoginComponent},
+                        {path: 'cadastro', component: TelaCadastroComponent},
+                        {path: 'usuarios', component: TelaUsuarioObservableComponent},
+                        {path: 'usuarios/:info', component: TelaUsuarioPromisseComponent},
+                      ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

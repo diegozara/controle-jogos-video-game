@@ -1,26 +1,44 @@
-<div id="tela-principal" class="row">
-    <div class="col s12 m6 pffset-m3">
-        <a routerLink="principal">
-        <div id="botao-login"
-             class="card-panel amber accent-4 center my-card-button">
-             <span class="white-text flow-text"> LOGIN </span>
-        </div>
-        </a>
+<div>
+  <h5>Jogos cadastrados</h5>
+  <!-- Tabela de usuários -->
+  <table class="highlight" *ngIf="jogos && jogos!.length > 0">
+    <thead>
+      <tr>
+        <th>Nome do Jogo</th>
+        <th>Fabricante</th>
+        <th>Ano Lançamento</th>
+        <th>Ano de Compra</th>
+        <th>Valor</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of jogos">
+        <td>{{ u.nome | titlecase }}</td>
+        <td>{{ u.fabricante | titlecase }}</td>
+        <td>{{ u.anoLancamento | number }}</td>
+        <td>{{ u.anoCompra | number }}</td>
+        <td>{{ u.valor | currency: "BRL" }}</td>
+        <td class="right"></td>
+        <a
+          ><i
+            class="material-icons my-icon-size"
+            (click)="onDelete(u.nome)"
+            >delete</i
+          ></a
+        >
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="!jogos || jogos!.length == 0">
+    <div class="row">
+      <div class="center-align">
+        <i class="col s12 material-icons large">mood_bad</i>
+        <span class="col s12 flow-text"
+          >Ainda não existem jogos cadastrados!</span
+        >
+      </div>
     </div>
-    <div class="col s12 m6 pffset-m3">
-        <a [routerLink]="['/principal/', 'parametroenviado']">
-        <div id="botao-login-parametro"
-             class="card-panel amber accent-4 center my-card-button">
-             <span class="white-text flow-text"> LOGIN COM PARAMETRO</span>
-        </div>
-        </a>
-    </div>
-    <div class="col s12 m6 pffset-m3">
-        <a routerLink="cadastrousuario">
-        <div id="botao-cad-user"
-             class="card-panel amber accent-4 center my-card-button">
-             <span class="white-text flow-text"> CADASTRAR USUARIO </span>
-        </div>
-        </a>
-    </div>
+  </div>
 </div>

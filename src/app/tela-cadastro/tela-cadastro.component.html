@@ -1,0 +1,118 @@
+<div class="container contact">
+  <h5>Cadastro de Jogos</h5>
+  <hr />
+<app-tela-principal
+  [mensagemCad]="this.message"
+  (mensagemEvent)="this.onMensagemEvent(this.message)">
+</app-tela-principal>
+
+  <div class="row">
+    <div class="col s12">
+      <div
+        id="cad-jogos"
+        class="card-panel white-text"
+        style="display: none"
+      ></div>
+  </div>
+    <form class="col s12" #form="ngForm" (submit)="onSubmit()">
+      <div class="row">
+        <div class="input-field col s12">
+          <input
+          id="input-nomejogo"
+          name = "input-nomejogo"
+          type="text"
+          class="validate"
+          [(ngModel)]="this.jogos.nome"
+          #jogonome="ngModel"
+          required
+           />
+          <label for="input-nomejogo">Nome Jogo</label>
+          <div class="red-text" [hidden]="jogonome.valid || jogonome.untouched">
+            Por favor, informe o nome do jogo.
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input
+          id="input-fabricante"
+          name="input-fabricante"
+          type="text"
+          class="validate"
+          [(ngModel)]="this.jogos.fabricante"
+          #fabricante="ngModel"
+          required
+          />
+          <label for="input-fabricante">Fabricante</label>
+          <div class="red-text" [hidden]="fabricante.valid || fabricante.untouched">
+            Por favor, informe o fabricante do jogo.
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input
+          id="input-lancamento"
+          name="input-lancamento"
+          type="number"
+          class="validate"
+          [(ngModel)]="this.jogos.anoLancamento"
+          #anolancamento="ngModel"
+          required
+          />
+          <label for="input-lancamento">Lancamento</label>
+          <div class="red-text" [hidden]="anolancamento.valid || anolancamento.untouched">
+            Por favor, informe o ano de lacamento do jogo.
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input
+           id="input-anocompra"
+           name="input-anocompra"
+           type="number"
+           class="validate"
+           [(ngModel)]="this.jogos.anoCompra"
+           #anocompra="ngModel"
+           required
+           />
+          <label for="input-anocompra">Ano Compra</label>
+          <div class="red-text" [hidden]="anocompra.valid || anocompra.untouched">
+            Por favor, informe o ano da compra do jogo.
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input
+            id="valor-input"
+            name="valor-input"
+            type="text"
+            mask="separator.2"
+            [thousandSeparator]="'.'"
+            [decimalMarker]="','"
+            prefix="R$"
+            [dropSpecialCharacters]="true"
+            [showMaskTyped]="false"
+            [(ngModel)]="this.jogos.valor"
+            #valorjogo="ngModel"
+            required
+          />
+          <label class="active" for="valor-input">Valor Pago</label>
+          <div class="red-text" [hidden]="valorjogo.valid || valorjogo.untouched">
+            Por favor, informe o valor pago pelo jogo.
+          </div>
+        </div>
+      </div>
+      <button
+        class="btn waves-effect waves-light blue darken-4"
+        type="submit"
+        [disabled]="!form.valid"
+      >
+        Cadastrar
+        <i class="material-icons right">send</i>
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,32 +1,32 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MenuComponent } from './menu/menu.component';
-import { FooterComponent } from './footer/footer.component';
-import { ValorComponent } from './valor/valor.component';
-import { FormsModule } from '@angular/forms';
-import { NgxMaskDirective } from 'ngx-mask';
-import { NgxMaskPipe } from 'ngx-mask';
-import { provideNgxMask } from 'ngx-mask';
-import { SaldoComponent } from './saldo/saldo.component';
-import { BalanceComponent } from './balance/balance.component';
+import { TelaLoginComponent } from './tela-login/tela-login.component';
 import { TelaPrincipalComponent } from './tela-principal/tela-principal.component';
-import { CadastroUsuariosComponent } from './cadastro-usuarios/cadastro-usuarios.component';
-import { LoginComponent } from './login/login.component';
+import { MenuComponent } from './menu/menu.component';
+import { RodapeComponent } from './rodape/rodape.component';
+import { FormsModule } from '@angular/forms';
+import { NgxMaskPipe } from 'ngx-mask';
+import { NgxMaskDirective } from 'ngx-mask';
+import { provideNgxMask } from 'ngx-mask';
+import { TelaCadastroComponent } from './tela-cadastro/tela-cadastro.component';
 import { HttpClientModule} from '@angular/common/http';
+import { TelaUsuarioObservableComponent } from './tela-usuario-observable/tela-usuario-observable.component';
+import { TelaUsuarioPromisseComponent } from './tela-usuario-promisse/tela-usuario-promisse.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
-    FooterComponent,
-    ValorComponent,
-    SaldoComponent,
-    BalanceComponent,
+    TelaLoginComponent,
     TelaPrincipalComponent,
-    CadastroUsuariosComponent,
-    LoginComponent,    
+    MenuComponent,
+    RodapeComponent,
+    TelaCadastroComponent,
+    TelaUsuarioObservableComponent,
+    TelaUsuarioPromisseComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +37,6 @@ import { HttpClientModule} from '@angular/common/http';
     HttpClientModule
   ],
   providers: [provideNgxMask(),],
-  bootstrap: [AppComponent,]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

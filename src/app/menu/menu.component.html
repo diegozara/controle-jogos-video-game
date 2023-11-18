@@ -1,33 +1,32 @@
 <div class="navbar-fixed" style="z-index: 101 !important">
-
-    <nav>
-        <div class="nav-wrapper amber accent-4">
-            <div class="container">
-                <a class="brand-logo" href="#">
-                    <img class="my-logo" src="/assets/resources/images/logo.png"/>
-                </a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger">
-                    <i class="material-icons">menu</i>
-                </a>
-                <ul class="right hide-on-med-and-down" [hidden]="!this.loggedIn"> 
-                    <li><a href="#" class="flow-text">Cadastrar</a></li>
-                    <li><a href="#" class="flow-text">Alterar</a></li>
-                    <li><a href="#" class="flow-text">Excluir</a></li>                    
-                </ul>
-            </div>
+  <nav>
+    <div class="nav-wrapper blue accent-4">
+      <div class="container">
+        <a class="brand-logo" href="#">
+          <img class="my-logo" src="/assets/resources/images/logo.png" />
+        </a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+          <i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down" [hidden]="this.loggedIn">
+          <li><a routerLink="/cadastro" class="flow-text">Cadastrar</a></li>
+          <li><a routerLink="/usuarios" class="flow-text">UsuárioObservable</a></li>
+          <li><a [routerLink]="['/usuarios/', 'promisses']" class="flow-text">UsuárioPromisses</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <ul class="sidenav blue" id="mobile-demo" #mobile>
+    <div class="row">
+      <div class="col s8 offset-s2">
+        <div class="center">
+          <img class="my-logo" src="/assets/resources/images/logo.png" />
         </div>
-    </nav>
-   <!-- <ul class="sidnav amber" id="mobile-demo" #mobile>
-        <div class="row">
-            <div class="col s8 offset-s2">
-                <div class="center">
-                    <img class="circle responsive-img" 
-                         src="/assets/resources/images/logo.png"/>
-                </div>
-            </div>
-        </div>
-        <li><a href="#" class="flow-text">Cadastrar</a></li>
-        <li><a href="#" class="flow-text">Alterar</a></li>
-        <li><a href="#" class="flow-text">Excluir</a></li>
-    </ul> -->
+      </div>
+    </div>
+    <div *ngIf="this.loggedIn">
+      <li><a routerLink="/cadastrojogos" class="flow-text">Cadastrar</a></li>
+      <li><a routerLink="/usuarios" class="flow-text">UsuárioObservable</a></li>
+      <li><a [routerLink]="['/usuarios/', 'promisses']" class="flow-text">UsuárioPromisses</a></li>
+    </div>
+  </ul>
 </div>
