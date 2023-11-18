@@ -4,11 +4,14 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --base-href=/controle-jogos-video-game/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "json:server": "json-server --watch db.json",
-    "json:server:routes": "json-server --watch db.json --routes routes.json"
+    "json:server:routes": "json-server --watch db.json --routes routes.json",
+    "deploy": "npm run build & npm run ghpages",
+    "ghpages": "angular-cli-ghpages --dir=dist/controle-jogos-video-game"
+
   },
   "private": true,
   "dependencies": {
