@@ -6,7 +6,7 @@ https://www.figma.com/proto/riz1IewYLSnBdViYrEaEVa/Untitled?type=design&node-id=
 
 ## Endereço de Deploy - GitHub Pages
 
-https://diegozara.github.io/controle-jogos-video-game/
+https://controle-jogos-video-game.netlify.app
 
 
 ## CHECK LIST 
